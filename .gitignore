@@ -1,0 +1,49 @@
+# WordPress Environment & Secrets
+.env
+.env.*
+wp-config.php
+*.log
+error_log
+
+# WordPress Core & Dynamic Uploads
+wp-admin/
+wp-includes/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-content/plugins/
+!wp-content/themes/
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Node & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Archives & Temporary files
+*.zip
+*.tar.gz
+*.sql
+*.sql.gz
+scratch/
+
+.vercel
+assets/images/products/source/
+made-with-oats/assets/images/products/source/

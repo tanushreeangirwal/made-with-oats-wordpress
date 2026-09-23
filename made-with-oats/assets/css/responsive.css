@@ -1,0 +1,506 @@
+/**
+ * Made With Oats — Responsive Breakpoints & Mobile Rules
+ * Zero horizontal overflow, fluid scaling, accessible touch targets
+ */
+
+/* ==========================================================================
+   1. Tablet Breakpoint (max-width: 1024px)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  :root {
+    --container-gutter: 32px;
+    --section-pad-y: var(--space-12);
+  }
+
+  .nav-menu {
+    gap: var(--space-3);
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.75rem, 4.5vw, 3.5rem);
+  }
+
+  .granola-editorial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .granola-panel-g1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   2. Mobile & Phablet Breakpoint (max-width: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  :root {
+    --container-gutter: 20px;
+    --section-pad-y: var(--section-pad-y-sm); /* 56 to 72px mobile */
+    --text-hero: clamp(2.25rem, 7vw, 2.5rem); /* 36 to 40px */
+    --text-h2: clamp(1.75rem, 5.5vw, 2rem);   /* 28 to 32px */
+    --text-product: 1.3125rem;               /* 21px */
+    --text-body: 1rem;                        /* 16px minimum */
+  }
+
+  /* Root overflow fix: No fixed widths, prevent overflow-x */
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: clip; /* Clean clip without masking root causes */
+  }
+
+  *, *::before, *::after {
+    min-width: 0; /* Prevents flexbox/grid blowouts */
+  }
+
+  /* Header: 86px tall on tablet, mark 66px, wordmark 25px */
+  .site-header {
+    height: 86px;
+  }
+
+  .site-header.is-scrolled {
+    height: 74px;
+  }
+
+  .main-navigation {
+    display: none; /* Hidden on mobile/tablet; full drawer handles navigation */
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-branding {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .site-logo-link {
+    gap: 12px;
+  }
+
+  .brand-wordmark {
+    font-size: 1.55rem;
+    white-space: nowrap; /* Strictly on ONE LINE */
+  }
+
+  .brand-logo-img {
+    width: 66px;
+    height: 66px;
+  }
+
+  .site-header.is-scrolled .brand-logo-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Announcement Bar: One line, not clipped, proper padding */
+  .announcement-bar {
+    font-size: 0.775rem;
+    padding: 8px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .announcement-ticker {
+    white-space: nowrap;
+  }
+
+  .announcement-item:not(:last-child),
+  .announcement-dot {
+    display: none;
+  }
+
+  /* Full screen search on mobile */
+  .search-modal {
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+  .search-modal-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  /* HERO: Mobile Layout
+     Image first in a tall crop (about 4:5) centred on pouches,
+     with eyebrow, line and button below on cream. Nothing overlays the image. */
+  .hero-editorial {
+    min-height: auto;
+    height: auto;
+    max-height: none;
+    background-color: var(--color-cream);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--space-8);
+  }
+
+  .hero-editorial::before {
+    display: none;
+  }
+
+  .hero-bg-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 80% center;
+    display: block;
+  }
+
+  .hero-editorial .container,
+  .hero-editorial .hero-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Copy below on cream on mobile */
+  .hero-editorial-copy {
+    padding: var(--space-6) var(--container-gutter) var(--space-2);
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    white-space: normal; /* Balances naturally within mobile viewport */
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-cta-btn {
+    width: 100%;
+  }
+
+  /* GRANOLA DISPLAY:
+     Mobile: G001 full-width and tall, then G002 and G003 side by side */
+  .granola-editorial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .granola-panel-g1 {
+    aspect-ratio: 4 / 5;
+  }
+
+  .granola-stacked-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  .granola-panel-g2,
+  .granola-panel-g3 {
+    aspect-ratio: 1 / 1;
+    padding: var(--space-2);
+  }
+
+  .granola-name {
+    font-size: 1.125rem;
+  }
+
+  .granola-flavour-line {
+    font-size: 0.875rem;
+  }
+
+  /* SHOP THE COLLECTION:
+     Mobile: 3 image tiles in a clean grid or 1-col */
+  .collection-tiles-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .collection-tile-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* STORY: Mobile */
+  .story-editorial-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .story-media-col {
+    aspect-ratio: 4 / 3;
+  }
+
+  .founder-band {
+    padding: var(--space-8) 0;
+  }
+
+  .founder-quote {
+    font-size: 1.45rem;
+  }
+
+  /* WHY MADE WITH OATS: Mobile */
+  .why-statements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* SERVICE TRUST STRIP: Tablet */
+  .service-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1.25rem;
+  }
+
+  /* REVIEWS CAROUSEL: Tablet */
+  .reviews-carousel-track {
+    gap: 1.25rem;
+  }
+
+  .review-carousel-card {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+    min-width: 280px;
+    padding: 1.5rem;
+  }
+
+  /* NEWSLETTER: Mobile */
+  .newsletter-form-inline {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter-email-input {
+    width: 100%;
+  }
+
+  .newsletter-submit-btn {
+    width: 100%;
+  }
+
+  /* FOOTER: Mobile styles handled cleanly in main.css via semantic accordions */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+/* ==========================================================================
+   2b. Mobile Product Cards (Home & Shop Grid up to 640px)
+   ========================================================================== */
+@media screen and (max-width: 640px) {
+  .collection-products-grid,
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .collection-card,
+  .catalog-card {
+    min-width: 0 !important;
+    padding: 10px !important;
+  }
+
+  .collection-card-thumb,
+  .catalog-card-thumb-wrap {
+    width: 100% !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .collection-card-img,
+  .catalog-card-thumb {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .collection-card-title,
+  .catalog-card-title {
+    font-size: clamp(1rem, 4vw, 1.125rem) !important; /* 16 to 18px */
+    line-height: 1.25 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    overflow-wrap: anywhere !important;
+    margin-bottom: 8px !important;
+  }
+
+  .collection-card-cat,
+  .catalog-card-meta,
+  .catalog-card-desc {
+    display: none !important;
+  }
+
+  .collection-card-footer,
+  .catalog-card-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin-top: auto !important;
+  }
+
+  .collection-card-price,
+  .catalog-card-price {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .collection-card-atc,
+  .catalog-btn-atc {
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.875rem !important;
+  }
+
+  .granola-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .granola-price {
+    width: 100%;
+    display: block;
+  }
+
+  .btn-atc-card {
+    width: 100%;
+    min-height: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   3. Small Mobile Breakpoint (max-width: 420px down to 320px)
+   ========================================================================== */
+@media screen and (max-width: 420px) {
+  :root {
+    --container-gutter: 12px;
+    --text-hero: 2.15rem; /* ~34-36px */
+    --text-h2: 1.625rem;  /* ~26px */
+  }
+
+  .site-header {
+    height: 74px;
+  }
+
+  .site-header.is-scrolled {
+    height: 64px;
+  }
+
+  .header-inner {
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    justify-content: space-between;
+  }
+
+  .site-branding {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-logo-link {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .brand-wordmark {
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .brand-logo-img {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .site-header.is-scrolled .brand-logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  #btn-header-account {
+    display: none !important;
+  }
+
+  .header-actions {
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .action-btn {
+    min-width: 34px;
+    min-height: 34px;
+    padding: 5px;
+  }
+
+  .mobile-nav-toggle {
+    min-width: 38px;
+    min-height: 38px;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+
+  .granola-stacked-col {
+    grid-template-columns: 1fr; /* Stack G002 and G003 for narrow screens */
+    gap: var(--space-5);
+  }
+
+  .granola-panel-g2,
+  .granola-panel-g3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  .btn-primary {
+    padding: 12px 20px;
+    font-size: 0.9375rem;
+  }
+
+  /* SERVICE TRUST STRIP: Mobile */
+  .service-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* REVIEWS CAROUSEL: Mobile swipe */
+  .review-carousel-card {
+    flex: 0 0 85%;
+    min-width: 250px;
+    scroll-snap-align: center;
+    padding: 1.35rem;
+  }
+}

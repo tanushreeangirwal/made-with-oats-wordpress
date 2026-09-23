@@ -1,0 +1,19 @@
+/*
+Theme Name: Made With Oats
+Theme URI: https://madewithoats.com
+Author: Made With Oats Studio
+Author URI: https://madewithoats.com
+Description: A bespoke, premium D2C food and lifestyle WordPress & WooCommerce theme crafted for Made With Oats. Features a warm, natural editorial aesthetic, dynamic WooCommerce cart integrations, modular homepage components, and accessible responsive layouts.
+Version: 2.2.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: made-with-oats
+Tags: e-commerce, custom-menu, custom-logo, featured-images, flexible-header, full-width-template, theme-options, translation-ready, woocommerce
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+/* Core styles are modularized in assets/css/ for maintainability and performance */

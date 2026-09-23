@@ -1,0 +1,229 @@
+/**
+ * Made With Oats — Editorial Design System
+ * Aesthetic: Restrained, tactile, small-batch artisanal bakery catalogue
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* 1. Core Palette (Adjusted to real pouches, contrast checked) */
+  --color-cream: #F5EEE1;         /* Dominant page background (55-60%) */
+  --color-offwhite: #FCFAF5;      /* Header, alternate sections, forms */
+  --color-oatmeal: #E6D8C0;       /* Product backdrops, secondary sections */
+  --color-chocolate: #3A2418;     /* Primary text, primary buttons, footer, founder band */
+  --color-chocolate-hover: #26170F;
+  --color-toasted-brown: #4E2F1D; /* Hairlines, small labels, hover accents - high contrast AA compliant */
+  --color-botanical-green: #5F6D4F; /* Rare accent only (2-3%) */
+
+  /* Desaturated Pouch Backdrops (Sampled from authentic packaging) */
+  --tint-g001: #E4DCD3;           /* Desaturated cool cocoa oat */
+  --tint-g002: #E8DECD;           /* Desaturated peanut butter oat */
+  --tint-g003: #E5DBCE;           /* Desaturated warm cinnamon hearth */
+
+  /* Semantic Aliases */
+  --bg-primary: var(--color-cream);
+  --bg-secondary: var(--color-oatmeal);
+  --bg-alt: var(--color-offwhite);
+  --bg-dark: var(--color-chocolate);
+  --text-primary: var(--color-chocolate);
+  --text-muted: rgba(58, 36, 24, 0.88);
+  --text-light: var(--color-cream);
+  --text-light-muted: rgba(245, 238, 225, 0.75);
+
+  /* Hairlines (1px brown at ~15% opacity) */
+  --border-hairline: 1px solid rgba(154, 107, 63, 0.15);
+  --border-hairline-light: 1px solid rgba(245, 238, 225, 0.15);
+  --border-hairline-dark: 1px solid rgba(58, 36, 24, 0.18);
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Type Scale — Desktop Defaults */
+  --text-hero: clamp(3.5rem, 5vw, 4.5rem);       /* 56px to 72px */
+  --text-h2: clamp(2.5rem, 3.5vw, 3rem);         /* 40px to 48px */
+  --text-product: clamp(1.625rem, 2vw, 1.875rem);/* 26px to 30px */
+  --text-h4: 1.375rem;                           /* 22px */
+  --text-body: 1.0625rem;                        /* 17px */
+  --text-ui: 0.9375rem;                          /* 15px */
+  --text-eyebrow: 0.75rem;                       /* 12px uppercase, tracking 0.14em */
+
+  /* Spacing Scale (8px Grid) */
+  --space-1: 0.5rem;    /* 8px */
+  --space-2: 1rem;      /* 16px */
+  --space-3: 1.5rem;    /* 24px */
+  --space-4: 2rem;      /* 32px */
+  --space-5: 2.5rem;    /* 40px */
+  --space-6: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-10: 5rem;     /* 80px */
+  --space-12: 6rem;     /* 96px */
+  --space-15: 7.5rem;   /* 120px */
+  --space-18: 8.75rem;  /* 140px */
+  --space-20: 10rem;    /* 160px */
+
+  /* Section Spacing (88-112px desktop, 56-72px mobile) */
+  --section-pad-y: clamp(5.5rem, 6.8vw, 7rem); /* ~88px to 112px desktop */
+  --section-pad-y-sm: clamp(3.5rem, 5vw, 4.5rem); /* ~56px to 72px mobile */
+
+  /* Layout Container */
+  --container-max: 1280px;
+  --container-gutter: 48px;
+
+  /* Shapes: Strict 0 to 4px radius */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius: 4px;
+
+  /* Natural Pouch Shadow (No heavy box shadows) */
+  --shadow-pouch: 0 16px 28px rgba(58, 36, 24, 0.10), 0 4px 10px rgba(58, 36, 24, 0.05);
+  --shadow-pouch-hover: 0 22px 36px rgba(58, 36, 24, 0.14), 0 6px 14px rgba(58, 36, 24, 0.07);
+
+  /* Motion */
+  --transition-lift: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-color: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+
+/* Reset & Foundational Rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-chocolate);
+  background-color: var(--color-cream);
+  /* STRICTLY NO GRADIENTS: Pouches are the only saturated colour */
+  background-image: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-chocolate);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 60ch;
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: var(--text-product);
+  font-weight: 400;
+}
+
+p {
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-toasted-brown);
+  margin-bottom: var(--space-2);
+}
+
+/* Restrained Primary Button (Sentence case, no trailing arrows) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background-color: var(--color-chocolate);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-chocolate);
+  cursor: pointer;
+  transition: var(--transition-lift);
+  text-align: center;
+  min-height: 48px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-chocolate-hover);
+  transform: translateY(-2px);
+  color: var(--color-offwhite);
+}
+
+/* Editorial Text Link (Sentence case, no arrows) */
+.link-editorial {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-ui);
+  font-weight: 500;
+  color: var(--color-chocolate);
+  border-bottom: 1px solid rgba(58, 36, 24, 0.35);
+  padding-bottom: 2px;
+  transition: var(--transition-color);
+}
+
+.link-editorial:hover {
+  color: var(--color-toasted-brown);
+  border-color: var(--color-toasted-brown);
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
