@@ -988,6 +988,43 @@
   overflow-wrap: normal;
 }
 
+/* Footer Social Media Links */
+.footer-social-links,
+.social-links {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+}
+
+.social-icon-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-color: rgba(245, 238, 225, 0.08) !important;
+  border: 1px solid rgba(245, 238, 225, 0.18) !important;
+  color: rgba(245, 238, 225, 0.85) !important;
+  transition: all 200ms ease !important;
+  text-decoration: none !important;
+}
+
+.social-icon-btn:hover {
+  background-color: rgba(245, 238, 225, 0.22) !important;
+  border-color: rgba(245, 238, 225, 0.45) !important;
+  color: #F5EEE1 !important;
+  transform: translateY(-2px);
+}
+
+.social-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
+
 /* Footer Bottom Bar: Hairline (cream at 15% opacity) above small bottom bar */
 .footer-bottom {
   display: flex;
