@@ -995,12 +995,27 @@
 
     function bindFooterAccordions() {
         document.querySelectorAll('.footer-accordion-heading').forEach(heading => {
-            heading.addEventListener('click', function () {
-                if (window.innerWidth <= 768) {
-                    const parent = this.closest('.footer-col-accordion');
-                    if (parent) {
-                        parent.classList.toggle('is-open');
+            if (heading.dataset.accordionBound === 'true') return;
+            heading.dataset.accordionBound = 'true';
+
+            function toggle(e) {
+                if (window.matchMedia('(max-width: 768px)').matches) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
                     }
+                    const parent = heading.closest('.footer-col-accordion');
+                    if (parent) {
+                        const isOpen = parent.classList.toggle('is-open');
+                        heading.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                }
+            }
+            heading.addEventListener('click', toggle);
+            heading.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle(e);
                 }
             });
         });

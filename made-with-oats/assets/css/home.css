@@ -1091,3 +1091,106 @@
 .newsletter-submit-btn {
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   Diwali Hampers Coming Soon Announcement
+   Restrained, Warm Oatmeal/Chocolate Palette, Minimalist Festive Elegance
+   ========================================================================== */
+.diwali-announcement-section {
+  padding: 3.5rem 0;
+  background-color: var(--color-cream, #F5EEE1);
+}
+
+.diwali-announcement-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--color-offwhite, #FCFAF5);
+  border: 1px solid rgba(58, 36, 24, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(58, 36, 24, 0.04);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.diwali-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.diwali-badge-wrap {
+  margin-bottom: 0.25rem;
+}
+
+.diwali-festive-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-toasted-brown, #4E2F1D);
+  background: rgba(230, 216, 192, 0.45);
+  border: 1px solid rgba(78, 47, 29, 0.15);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.diwali-announcement-title {
+  font-family: var(--font-serif, "Fraunces", Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-chocolate, #3A2418);
+  margin: 0.25rem 0 0 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.diwali-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(58, 36, 24, 0.28);
+  background: rgba(245, 238, 225, 0.5);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-chocolate, #3A2418);
+  margin-top: 0.25rem;
+}
+
+.diwali-announcement-tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: rgba(58, 36, 24, 0.85);
+  max-width: 42ch;
+  margin: 0.25rem 0 0 0;
+  line-height: 1.6;
+}
+
+.diwali-decorative-line {
+  width: 40px;
+  height: 2px;
+  background-color: rgba(58, 36, 24, 0.18);
+  border-radius: 2px;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .diwali-announcement-section {
+    padding: 2.5rem 0;
+  }
+  .diwali-announcement-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 12px;
+    margin: 0 0.5rem;
+  }
+}
+

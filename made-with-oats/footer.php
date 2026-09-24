@@ -31,42 +31,34 @@
                 </div>
             </div>
 
-            <!-- Column 2: Quick Links -->
-            <div class="footer-col">
-                <h4 class="footer-heading"><?php esc_html_e( 'Quick Links', 'made-with-oats' ); ?></h4>
-                <ul class="footer-nav">
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-link">Home</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="footer-link">Shop All</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="footer-link">Our Story</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="footer-link">Contact Us</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/track-order' ) ); ?>" class="footer-link">Track Order</a></li>
+            <!-- Column 2: Shop Snacks -->
+            <div class="footer-col footer-col-accordion">
+                <h4 class="footer-heading footer-accordion-heading" role="button" tabindex="0" aria-expanded="false">
+                    <span><?php esc_html_e( 'Shop Snacks', 'made-with-oats' ); ?></span>
+                    <svg class="footer-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </h4>
+                <ul class="footer-links footer-nav">
+                    <li><a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="footer-link"><?php esc_html_e( 'All snacks', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/category/granola' ) ); ?>" class="footer-link"><?php esc_html_e( 'Granola', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/category/bites' ) ); ?>" class="footer-link"><?php esc_html_e( 'Indulgent Chocolate Bites', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/category/snack-bars' ) ); ?>" class="footer-link"><?php esc_html_e( 'Snack Bars', 'made-with-oats' ); ?></a></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Shop -->
-            <div class="footer-col">
-                <h4 class="footer-heading"><?php esc_html_e( 'Shop Categories', 'made-with-oats' ); ?></h4>
-                <ul class="footer-nav">
-                    <li><a href="<?php echo esc_url( home_url( '/category/granola' ) ); ?>" class="footer-link">Granola</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/energy-bars' ) ); ?>" class="footer-link">Energy Bars</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/bites' ) ); ?>" class="footer-link">Indulgent Chocolate Bites</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/snack-bars' ) ); ?>" class="footer-link">Snack Bars</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/gift-hampers' ) ); ?>" class="footer-link">Gift Hampers</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/combos' ) ); ?>" class="footer-link">Combos</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/category/offers' ) ); ?>" class="footer-link">Special Offers</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Customer Care -->
-            <div class="footer-col">
-                <h4 class="footer-heading"><?php esc_html_e( 'Customer Care', 'made-with-oats' ); ?></h4>
-                <ul class="footer-nav">
-                    <li><a href="<?php echo esc_url( home_url( '/faqs' ) ); ?>" class="footer-link">FAQs</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/shipping-delivery' ) ); ?>" class="footer-link">Shipping &amp; Delivery</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/returns-and-refunds' ) ); ?>" class="footer-link">Returns &amp; Refunds</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/track-order' ) ); ?>" class="footer-link">Track Order</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/privacy-policy' ) ); ?>" class="footer-link">Privacy Policy</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/terms-conditions' ) ); ?>" class="footer-link">Terms &amp; Conditions</a></li>
+            <!-- Column 3: Customer Care -->
+            <div class="footer-col footer-col-accordion">
+                <h4 class="footer-heading footer-accordion-heading" role="button" tabindex="0" aria-expanded="false">
+                    <span><?php esc_html_e( 'Customer Care', 'made-with-oats' ); ?></span>
+                    <svg class="footer-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </h4>
+                <ul class="footer-links footer-nav">
+                    <li><a href="<?php echo esc_url( home_url( '/track-order' ) ); ?>" class="footer-link"><?php esc_html_e( 'Track Your Order', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/shipping-delivery' ) ); ?>" class="footer-link"><?php esc_html_e( 'Shipping & Delivery', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/returns-and-refunds' ) ); ?>" class="footer-link"><?php esc_html_e( 'Returns & Refunds', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/faqs' ) ); ?>" class="footer-link"><?php esc_html_e( 'FAQs', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="footer-link"><?php esc_html_e( 'Contact Us', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/privacy-policy' ) ); ?>" class="footer-link"><?php esc_html_e( 'Privacy Policy', 'made-with-oats' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/terms-conditions' ) ); ?>" class="footer-link"><?php esc_html_e( 'Terms & Conditions', 'made-with-oats' ); ?></a></li>
                 </ul>
             </div>
 

@@ -76,4 +76,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 4. Mobile Footer Accordions (Shop Snacks & Customer Care)
+  function initFooterAccordions() {
+    const headings = document.querySelectorAll('.footer-accordion-heading');
+    headings.forEach(heading => {
+      if (heading.dataset.accordionBound === 'true') return;
+      heading.dataset.accordionBound = 'true';
+
+      function toggle(e) {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          const parent = heading.closest('.footer-col-accordion');
+          if (parent) {
+            const isOpen = parent.classList.toggle('is-open');
+            heading.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          }
+        }
+      }
+
+      heading.addEventListener('click', toggle);
+      heading.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle(e);
+        }
+      });
+    });
+  }
+
+  initFooterAccordions();
 });
+

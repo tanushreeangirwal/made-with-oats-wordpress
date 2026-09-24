@@ -31,7 +31,7 @@ get_header();
     // 3. Asymmetric Editorial Categories (Granola Featured)
     get_template_part( 'template-parts/home/categories' );
 
-    // 4. Featured Hamper / Festive Gifting Showcase (Diwali Hamper 1)
+    // 4. Diwali Hampers Coming Soon Announcement
     get_template_part( 'template-parts/home/featured-hamper' );
 
     // 5. Story Chapter 01: "Snacking, made thoughtfully." (Approved Story Copy)
